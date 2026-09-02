@@ -1,0 +1,1966 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Amman Motors Mechanic Works</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eeeeee;
+    color: #222;
+}
+
+.page {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    background: white;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HEADER / NAVIGATION
+========================================================= */
+
+.header {
+    min-height: 65px;
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 8px 5%;
+
+    border-bottom: 1px solid #ddd;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+
+/* DESKTOP NAVIGATION */
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    flex: 1;
+}
+
+.nav a {
+    color: #222;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+
+    position: relative;
+
+    transition: color 0.3s ease;
+}
+
+.nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background: #00cdbd;
+
+    transition: width 0.3s ease;
+}
+
+.nav a:hover {
+    color: #00a99d;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+
+/* MENU BUTTON */
+
+.menu {
+    width: 40px;
+    height: 40px;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+
+    color: #222;
+
+    cursor: pointer;
+
+    border: none;
+    background: transparent;
+}
+
+
+/* MOBILE MENU */
+
+.mobile-menu {
+    display: none;
+
+    position: absolute;
+
+    top: 65px;
+    left: 0;
+
+    width: 100%;
+
+    background: white;
+
+    border-bottom: 1px solid #ddd;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+
+    padding: 15px 20px;
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+.mobile-menu a {
+    display: block;
+
+    padding: 14px 10px;
+
+    color: #222;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-menu a:last-child {
+    border-bottom: none;
+}
+
+.mobile-menu a:hover {
+    background: #f3f3f3;
+}
+
+
+/* =========================================================
+   HERO / HOME
+========================================================= */
+
+.hero {
+    min-height: 360px;
+
+    background: #879aaa;
+
+    padding: 45px 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.hero-content {
+    width: 53%;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: clamp(30px, 4vw, 58px);
+
+    line-height: 1.08;
+
+    color: white;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    margin-bottom: 18px;
+}
+
+.hero-content p {
+    max-width: 520px;
+
+    font-size: clamp(13px, 1.2vw, 18px);
+
+    line-height: 1.6;
+
+    color: white;
+
+    margin-bottom: 25px;
+}
+
+.hero-btn {
+    display: inline-block;
+
+    background: #00e5d0;
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    padding: 12px 24px;
+
+    border-radius: 5px;
+
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    transform: translateY(-2px);
+
+    background: #00cdbd;
+}
+
+.hero-image {
+    width: 47%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+
+    max-width: 520px;
+
+    height: 300px;
+
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services {
+    background: #eef0d9;
+
+    padding: 45px 7%;
+
+    text-align: center;
+}
+
+.section-title {
+    font-size: clamp(24px, 3vw, 38px);
+
+    font-weight: 800;
+
+    color: #222;
+
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    font-size: clamp(12px, 1.2vw, 17px);
+
+    color: #555;
+
+    line-height: 1.5;
+
+    margin-bottom: 20px;
+}
+
+.service-logo {
+    width: 70px;
+
+    height: 70px;
+
+    object-fit: contain;
+
+    margin-bottom: 15px;
+}
+
+.service-details {
+    max-width: 700px;
+
+    margin: 0 auto 30px;
+
+    text-align: center;
+
+    font-size: clamp(12px, 1.1vw, 16px);
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   AUTOMATIC VEHICLES
+========================================================= */
+
+.vehicle-slider {
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    position: relative;
+
+    padding: 10px 0;
+}
+
+.vehicle-track {
+    display: flex;
+
+    width: max-content;
+
+    gap: 20px;
+
+    animation: vehicleMove 14s linear infinite;
+}
+
+.vehicle-slider:hover .vehicle-track {
+    animation-play-state: paused;
+}
+
+.vehicle-card {
+    flex: 0 0 300px;
+
+    background: white;
+
+    padding: 15px;
+
+    border-radius: 6px;
+
+    text-align: center;
+
+    transition: transform 0.3s ease;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-6px);
+}
+
+.vehicle-card img {
+    width: 100%;
+
+    height: 130px;
+
+    object-fit: contain;
+}
+
+.vehicle-card p {
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-top: 10px;
+}
+
+
+/* AUTOMATIC MOVEMENT */
+
+@keyframes vehicleMove {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-50% - 10px));
+    }
+
+}
+
+
+/* =========================================================
+   RATING
+========================================================= */
+
+.rating {
+    margin-top: 25px;
+}
+
+.star {
+    color: red;
+
+    font-size: 28px;
+
+    margin-right: 8px;
+}
+
+.rating-btn {
+    display: inline-block;
+
+    background: #fff000;
+
+    border-radius: 8px;
+
+    padding: 7px 16px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+    background: #14253d;
+
+    color: white;
+
+    padding: 50px 7%;
+
+    min-height: 330px;
+
+    position: relative;
+}
+
+.about h2 {
+    width: 60%;
+
+    max-width: 650px;
+
+    font-size: clamp(24px, 3vw, 40px);
+
+    line-height: 1.25;
+
+    margin-bottom: 15px;
+}
+
+.about h3 {
+    width: 60%;
+
+    font-size: clamp(15px, 1.5vw, 21px);
+
+    margin-bottom: 12px;
+}
+
+.about p {
+    width: 60%;
+
+    max-width: 650px;
+
+    font-size: clamp(12px, 1.1vw, 16px);
+
+    line-height: 1.6;
+
+    color: #eee;
+}
+
+.owner-photo {
+    position: absolute;
+
+    top: 45px;
+
+    right: 8%;
+
+    width: 190px;
+
+    height: 190px;
+
+    border-radius: 50%;
+
+    border: 4px solid white;
+
+    object-fit: cover;
+}
+
+.about-btn {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    background: white;
+
+    color: #222;
+
+    padding: 11px 22px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.about-bottom-image {
+    width: 90px;
+
+    height: 80px;
+
+    object-fit: contain;
+
+    margin-top: 15px;
+}
+
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.story {
+    background: #dfe3e6;
+
+    padding: 50px 7%;
+}
+
+.story-row {
+    display: flex;
+
+    gap: 45px;
+
+    align-items: center;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+.story-image {
+    width: 50%;
+}
+
+.story-image img:first-child {
+    width: 100%;
+
+    height: 300px;
+
+    object-fit: cover;
+}
+
+.story-content {
+    width: 50%;
+}
+
+.story-content h2 {
+    font-size: clamp(22px, 2.5vw, 34px);
+
+    margin-bottom: 15px;
+}
+
+.story-content p {
+    font-size: clamp(12px, 1.1vw, 16px);
+
+    line-height: 1.7;
+}
+
+.owner-small {
+    width: 90px;
+
+    height: 90px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 3px solid white;
+
+    margin-top: -45px;
+
+    margin-left: 40px;
+
+    position: relative;
+}
+
+.story-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    max-width: 1100px;
+
+    margin: 25px auto 0;
+}
+
+.story-bottom img {
+    width: 120px;
+
+    height: 100px;
+
+    object-fit: cover;
+}
+
+.green-btn {
+    background: #00f08b;
+
+    color: #111;
+
+    padding: 11px 22px;
+
+    border-radius: 4px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   BOOK SERVICE
+========================================================= */
+
+.booking {
+    background: #fff5e8;
+
+    padding: 50px 7%;
+
+    position: relative;
+}
+
+.booking h2 {
+    text-align: center;
+
+    font-size: clamp(24px, 3vw, 38px);
+
+    margin-bottom: 30px;
+}
+
+.booking-content {
+    display: flex;
+
+    gap: 50px;
+
+    align-items: center;
+
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+.booking-details {
+    width: 58%;
+}
+
+.booking-details h3 {
+    font-size: clamp(16px, 1.5vw, 22px);
+
+    margin-bottom: 15px;
+}
+
+.booking-details p {
+    font-size: clamp(12px, 1.1vw, 16px);
+
+    line-height: 2;
+}
+
+.tools-image {
+    width: 42%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.tools-image img {
+    width: 100%;
+
+    max-width: 350px;
+
+    height: 250px;
+
+    object-fit: contain;
+}
+
+.whatsapp {
+    display: block;
+
+    width: fit-content;
+
+    margin: 25px auto 0;
+
+    background: #00e5bd;
+
+    color: #111;
+
+    padding: 11px 25px;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   WHY US
+========================================================= */
+
+.why {
+    background: white;
+
+    padding: 50px 7%;
+}
+
+.why h2 {
+    font-size: clamp(24px, 3vw, 38px);
+
+    margin-bottom: 25px;
+
+    text-align: center;
+}
+
+.why-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    align-items: center;
+}
+
+.why-item h3 {
+    font-size: clamp(15px, 1.5vw, 21px);
+
+    margin-bottom: 8px;
+}
+
+.why-item p {
+    font-size: clamp(12px, 1.1vw, 16px);
+
+    line-height: 1.6;
+}
+
+.mechanic-image {
+    width: 100%;
+
+    height: 260px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    background: #ffffff;
+
+    padding: 25px 7% 35px;
+
+    text-align: center;
+
+    border-top: 1px solid #ddd;
+}
+
+.footer h3 {
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.footer strong {
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .header {
+        padding: 8px 4%;
+    }
+
+    .nav {
+        gap: 20px;
+    }
+
+    .hero {
+        min-height: 300px;
+
+        padding: 35px 5%;
+    }
+
+    .hero-image img {
+        height: 240px;
+    }
+
+    .owner-photo {
+        width: 145px;
+
+        height: 145px;
+
+        right: 6%;
+    }
+
+    .about {
+        min-height: 300px;
+    }
+
+    .story-row {
+        gap: 25px;
+    }
+
+    .story-image img:first-child {
+        height: 240px;
+    }
+
+    .booking-content {
+        gap: 25px;
+    }
+
+    .vehicle-card {
+        flex: 0 0 250px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 599px) {
+
+    body {
+        background: white;
+    }
+
+    .page {
+        width: 100%;
+
+        max-width: 100%;
+
+        box-shadow: none;
+    }
+
+
+    /* MOBILE HEADER */
+
+    .header {
+        height: 55px;
+
+        min-height: 55px;
+
+        padding: 7px 12px;
+    }
+
+    .logo {
+        width: 42px;
+
+        height: 42px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+    }
+
+    .mobile-menu {
+        top: 55px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 190px;
+
+        padding: 15px 12px;
+    }
+
+    .hero-content {
+        width: 53%;
+    }
+
+    .hero-content h1 {
+        font-size: 21px;
+
+        line-height: 1.08;
+
+        margin-bottom: 8px;
+    }
+
+    .hero-content p {
+        font-size: 8px;
+
+        line-height: 1.5;
+
+        margin-bottom: 12px;
+    }
+
+    .hero-btn {
+        font-size: 8px;
+
+        padding: 7px 13px;
+    }
+
+    .hero-image {
+        width: 47%;
+    }
+
+    .hero-image img {
+        width: 100%;
+
+        max-width: 165px;
+
+        height: 145px;
+    }
+
+
+    /* SERVICES */
+
+    .services {
+        padding: 15px 12px 18px;
+    }
+
+    .section-title {
+        font-size: 14px;
+    }
+
+    .section-subtitle {
+        font-size: 8px;
+
+        margin-bottom: 10px;
+    }
+
+    .service-logo {
+        width: 48px;
+
+        height: 48px;
+
+        margin-bottom: 8px;
+    }
+
+    .service-details {
+        text-align: left;
+
+        font-size: 8px;
+
+        line-height: 1.5;
+
+        margin-bottom: 12px;
+    }
+
+
+    /* VEHICLES */
+
+    .vehicle-slider {
+        width: 100%;
+
+        padding: 5px 0;
+    }
+
+    .vehicle-track {
+        gap: 7px;
+
+        animation-duration: 10s;
+    }
+
+    .vehicle-card {
+        flex: 0 0 125px;
+
+        padding: 5px;
+
+        border-radius: 3px;
+    }
+
+    .vehicle-card img {
+        height: 50px;
+    }
+
+    .vehicle-card p {
+        font-size: 7px;
+
+        margin-top: 3px;
+    }
+
+
+    /* RATING */
+
+    .rating {
+        margin-top: 12px;
+    }
+
+    .star {
+        font-size: 17px;
+    }
+
+    .rating-btn {
+        padding: 3px 9px;
+
+        font-size: 7px;
+    }
+
+
+    /* ABOUT */
+
+    .about {
+        padding: 18px 12px;
+
+        min-height: 180px;
+    }
+
+    .about h2 {
+        width: 62%;
+
+        font-size: 14px;
+
+        margin-bottom: 8px;
+    }
+
+    .about h3 {
+        width: 65%;
+
+        font-size: 10px;
+
+        margin-bottom: 7px;
+    }
+
+    .about p {
+        width: 65%;
+
+        font-size: 7px;
+
+        line-height: 1.45;
+    }
+
+    .owner-photo {
+        top: 12px;
+
+        right: 12px;
+
+        width: 75px;
+
+        height: 75px;
+
+        border: 3px solid white;
+    }
+
+    .about-btn {
+        margin-top: 14px;
+
+        padding: 6px 12px;
+
+        font-size: 7px;
+    }
+
+    .about-bottom-image {
+        width: 60px;
+
+        height: 55px;
+
+        margin-top: 8px;
+    }
+
+
+    /* STORY */
+
+    .story {
+        padding: 18px 12px;
+    }
+
+    .story-row {
+        gap: 12px;
+    }
+
+    .story-image {
+        width: 45%;
+    }
+
+    .story-image img:first-child {
+        height: 110px;
+    }
+
+    .story-content {
+        width: 55%;
+    }
+
+    .story-content h2 {
+        font-size: 10px;
+
+        margin-bottom: 8px;
+    }
+
+    .story-content p {
+        font-size: 7px;
+
+        line-height: 1.45;
+    }
+
+    .owner-small {
+        width: 58px;
+
+        height: 58px;
+
+        margin-top: -30px;
+
+        margin-left: 30px;
+    }
+
+    .story-bottom {
+        margin-top: 8px;
+    }
+
+    .story-bottom img {
+        width: 70px;
+
+        height: 65px;
+    }
+
+    .green-btn {
+        padding: 6px 12px;
+
+        font-size: 7px;
+    }
+
+
+    /* BOOKING */
+
+    .booking {
+        padding: 18px 12px 20px;
+    }
+
+    .booking h2 {
+        font-size: 15px;
+
+        margin-bottom: 12px;
+    }
+
+    .booking-content {
+        gap: 10px;
+    }
+
+    .booking-details {
+        width: 58%;
+    }
+
+    .booking-details h3 {
+        font-size: 8px;
+
+        margin-bottom: 7px;
+    }
+
+    .booking-details p {
+        font-size: 7px;
+
+        line-height: 1.7;
+    }
+
+    .tools-image {
+        width: 42%;
+    }
+
+    .tools-image img {
+        height: 130px;
+    }
+
+    .whatsapp {
+        margin: 10px auto 0;
+
+        padding: 7px 14px;
+
+        font-size: 8px;
+    }
+
+
+    /* WHY */
+
+    .why {
+        padding: 17px 12px;
+    }
+
+    .why h2 {
+        font-size: 13px;
+
+        margin-bottom: 9px;
+
+        text-align: left;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 12px;
+    }
+
+    .why-item h3 {
+        font-size: 8px;
+
+        margin-bottom: 5px;
+    }
+
+    .why-item p {
+        font-size: 7px;
+
+        line-height: 1.5;
+    }
+
+    .mechanic-image {
+        height: 95px;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding: 8px 12px 15px;
+    }
+
+    .footer h3 {
+        font-size: 9px;
+
+        margin-bottom: 5px;
+    }
+
+    .footer p {
+        font-size: 7px;
+
+        line-height: 1.4;
+    }
+
+    .footer strong {
+        font-size: 7px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .hero-content h1 {
+        font-size: 18px;
+    }
+
+    .hero-content p {
+        font-size: 7px;
+    }
+
+    .hero-image img {
+        height: 125px;
+    }
+
+    .vehicle-card {
+        flex: 0 0 115px;
+    }
+
+    .vehicle-card img {
+        height: 45px;
+    }
+
+    .vehicle-card p {
+        font-size: 6px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="header">
+
+        <a href="#home">
+
+            <img
+                src="https://1drv.ms/i/c/cf011d15083f0473/IQAXAZFvFGq9SbZkwOyr6aezAfxZBnVSTFsdeMNV3mA4rCg?e=8EjmQZ"
+                class="logo"
+                alt="Amman Motors Logo"
+            >
+
+        </a>
+
+
+        <!-- DESKTOP NAVIGATION -->
+
+        <nav class="nav">
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#services">
+                Services
+            </a>
+
+            <a href="#story">
+                Our Story
+            </a>
+
+            <a href="#booking">
+                Book Service
+            </a>
+
+        </nav>
+
+
+        <!-- MOBILE MENU BUTTON -->
+
+        <button
+            class="menu"
+            id="menuButton"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+
+        <!-- MOBILE NAVIGATION -->
+
+        <div class="mobile-menu" id="mobileMenu">
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#services">
+                Services
+            </a>
+
+            <a href="#story">
+                Our Story
+            </a>
+
+            <a href="#booking">
+                Book Service
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         HOME
+    ====================================================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                AMMAN<br>
+                MOTORS MECHANIC<br>
+                WORKS
+            </h1>
+
+            <p>
+                Professional automobile service and
+                repair solutions for all types of vehicles.
+            </p>
+
+            <a href="#booking" class="hero-btn">
+                Book a Service
+            </a>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <img
+                src="images/https:"Screenshot 2026-07-23 213819.png""
+                alt="Mechanic working on vehicle"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SERVICES
+    ====================================================== -->
+
+    <section class="services" id="services">
+
+        <h2 class="section-title">
+            Vehicle Repair Service
+        </h2>
+
+        <p class="section-subtitle">
+            Quality Service • Reliable Repairs • Trusted Professionals
+        </p>
+
+
+        <img
+            src="images/service-logo.png"
+            class="service-logo"
+            alt="Service Logo"
+        >
+
+
+        <div class="service-details">
+
+            <strong>
+                AMMAN MOTORS
+            </strong>
+
+            <br>
+
+            Complete automobile repair and
+            maintenance services for your vehicle.
+            We provide professional and reliable work.
+
+        </div>
+
+
+        <!-- AUTOMATIC VEHICLES -->
+
+        <div class="vehicle-slider">
+
+            <div class="vehicle-track">
+
+
+                <!-- VEHICLE 1 -->
+
+                <div class="vehicle-card">
+
+                    <img
+                        src="images/vehicle1.png"
+                        alt="Truck"
+                    >
+
+                    <p>
+                        truck SERVICE
+                    </p>
+
+                </div>
+
+
+                <!-- VEHICLE 2 -->
+
+                <div class="vehicle-card">
+
+                    <img
+                        src="images/vehicle2.png"
+                        alt="Truck"
+                    >
+
+                    <p>
+                        TRUCK SERVICE
+                    </p>
+
+                </div>
+
+
+                <!-- VEHICLE 3 -->
+
+                <div class="vehicle-card">
+
+                    <img
+                        src="images/vehicle3.png"
+                        alt="TRUCK"
+                    >
+
+                    <p>
+                        Truck SERVICE
+                    </p>
+
+                </div>
+
+
+                <!-- DUPLICATE VEHICLES -->
+
+                <div class="vehicle-card">
+
+                    <img
+                        src="images/vehicle1.png"
+                        alt="Truck"
+                    >
+
+                    <p>
+                        truck SERVICE
+                    </p>
+
+                </div>
+
+
+                <div class="vehicle-card">
+
+                    <img
+                        src="images/vehicle2.png"
+                        alt="Truck"
+                    >
+
+                    <p>
+                        TRUCK SERVICE
+                    </p>
+s
+                </div>
+
+
+                <div class="vehicle-card">
+
+                    <img
+                        src="images/vehicle3.png"
+                        alt="Truck"
+                    >
+
+                    <p>
+                        TRUCK SERVICE
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="rating">
+
+            <span class="star">
+                ★
+            </span>
+
+            <span class="rating-btn">
+                Rate Our Service
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+
+    <section class="about" id="about">
+
+        <h2>
+            Introducing Our Founder
+            & Chief Mechanic
+        </h2>
+
+
+        <img
+            src="images/owner.jpg"
+            class="owner-photo"
+            alt="Founder"
+        >
+
+
+        <h3>
+            The Trusted Automobile Expert
+        </h3>
+
+
+        <p>
+            With years of experience in automobile
+            repair and maintenance, our chief mechanic
+            provides dependable solutions and quality
+            workmanship for every customer.
+        </p>
+
+
+        <a href="#services" class="about-btn">
+            Explore Our Services
+        </a>
+
+
+        <br>
+
+
+        <img
+            src="images/workshop.png"
+            class="about-bottom-image"
+            alt="Workshop"
+        >
+
+    </section>
+
+
+    <!-- =====================================================
+         STORY
+    ====================================================== -->
+
+    <section class="story" id="story">
+
+        <div class="story-row">
+
+            <div class="story-image">
+
+                <img
+                    src="images/workshop-photo.jpg"
+                    alt="Workshop"
+                >
+
+                <img
+                    src="images/owner.jpg"
+                    class="owner-small"
+                    alt="Owner"
+                >
+
+            </div>
+
+
+            <div class="story-content">
+
+                <h2>
+                    The Heart of Our Workshop
+                </h2>
+
+                <p>
+                    Our workshop is built around trust,
+                    experience and quality service.
+                    Every vehicle receives careful
+                    inspection and professional attention.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="story-bottom">
+
+            <a
+                href="#booking"
+                class="green-btn"
+            >
+                Book a Service
+            </a>
+
+
+            <img
+                src="images/car-repair.jpg"
+                alt="Car repair"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BOOKING
+    ====================================================== -->
+
+    <section
+        class="booking"
+        id="booking"
+    >
+
+        <h2>
+            Book Your Service Now
+        </h2>
+
+
+        <div class="booking-content">
+
+            <div class="booking-details">
+
+                <h3>
+                    Professional Car Repair
+                </h3>
+
+
+                <p>
+                    ✓ Engine Service<br>
+                    ✓ General Service<br>
+                    ✓ Oil Change<br>
+                    ✓ Brake Service<br>
+                    ✓ Electrical Repair<br>
+                    ✓ AC Service<br>
+                    ✓ Vehicle Inspection<br>
+                    ✓ Complete Maintenance
+                </p>
+
+            </div>
+
+
+            <div class="tools-image">
+
+                <img
+                    src="images/tools.png"
+                    alt="Mechanic tools"
+                >
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="https://wa.me/"
+            class="whatsapp"
+            target="_blank"
+        >
+            WhatsApp
+        </a>
+
+    </section>
+
+
+    <!-- =====================================================
+         WHY US
+    ====================================================== -->
+
+    <section class="why">
+
+        <h2>
+            Why Us?
+        </h2>
+
+
+        <div class="why-grid">
+
+            <div class="why-item">
+
+                <h3>
+                    Experienced Mechanics
+                </h3>
+
+                <p>
+                    Skilled professionals with
+                    strong automobile experience.
+                </p>
+
+
+                <br>
+
+
+                <h3>
+                    Trusted Service
+                </h3>
+
+                <p>
+                    Reliable repair and maintenance
+                    for your vehicle.
+                </p>
+
+            </div>
+
+
+            <div class="why-item">
+
+                <img
+                    src="images/mechanic.png"
+                    class="mechanic-image"
+                    alt="Mechanic"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <h3>
+            Thank You For Visiting!
+        </h3>
+
+        <p>
+            <strong>
+                Amman Motors Mechanic Works
+            </strong>
+        </p>
+
+        <p>
+            Professional automobile repair,
+            service and maintenance.
+        </p>
+
+        <p>
+            📞 Contact us for your vehicle service needs.
+        </p>
+
+    </footer>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT NAVIGATION
+========================================================= -->
+
+<script>
+
+const menuButton = document.getElementById("menuButton");
+const mobileMenu = document.getElementById("mobileMenu");
+
+
+// OPEN / CLOSE MOBILE MENU
+
+menuButton.addEventListener("click", function () {
+
+    mobileMenu.classList.toggle("active");
+
+    const isOpen =
+        mobileMenu.classList.contains("active");
+
+    menuButton.setAttribute(
+        "aria-expanded",
+        isOpen
+    );
+
+    // Change hamburger to X
+
+    if (isOpen) {
+
+        menuButton.textContent = "✕";
+
+    } else {
+
+        menuButton.textContent = "☰";
+
+    }
+
+});
+
+
+// CLOSE MOBILE MENU AFTER CLICKING A LINK
+
+const mobileLinks =
+    document.querySelectorAll(".mobile-menu a");
+
+mobileLinks.forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        mobileMenu.classList.remove("active");
+
+        menuButton.textContent = "☰";
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+    });
+
+});
+
+
+// CLOSE MOBILE MENU WHEN CLICKING OUTSIDE
+
+document.addEventListener("click", function(event) {
+
+    const clickedInsideMenu =
+        mobileMenu.contains(event.target);
+
+    const clickedButton =
+        menuButton.contains(event.target);
+
+    if (
+        !clickedInsideMenu &&
+        !clickedButton &&
+        mobileMenu.classList.contains("active")
+    ) {
+
+        mobileMenu.classList.remove("active");
+
+        menuButton.textContent = "☰";
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
+```
